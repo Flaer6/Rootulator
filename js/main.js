@@ -29,27 +29,27 @@ D = ${b}² - 4 * (${a}) * (${c})
 
 D = ${b ** 2} - ${4 * a * c}
 
-D = ${resDiscriminant.toFixed(2)}
+D = ${formatNumber(resDiscriminant)}
 
 ==========================
 
 x1 = -b + √D / 2 * a
 
-x1 = ${-b.toFixed(2)} + √${resDiscriminant.toFixed(2)} / 2 * (${a})
+x1 = ${formatNumber(-b)} + √${formatNumber(resDiscriminant)} / 2 * (${a})
 
-x1 = ${-b.toFixed(2) + Math.sqrt(resDiscriminant).toFixed(2)} / (${2 * a})
+x1 = ${formatNumber(-b) + formatNumber(Math.sqrt(resDiscriminant))} / (${2 * a})
 
-x1 = ${resX1.toFixed(2)}
+x1 = ${formatNumber(resX1)}
 
 ==========================
 
 x2 = -b - √D / 2 * a
 
-x2 = ${-b.toFixed(2)} - √${resDiscriminant} / 2 * (${a})
+x2 = ${formatNumber(-b)} - √${resDiscriminant} / 2 * (${a})
 
-x2 = ${-b.toFixed(2) - Math.sqrt(resDiscriminant)} / (${2 * a})
+x2 = ${formatNumber(-b) - Math.sqrt(resDiscriminant)} / (${2 * a})
 
-x2 = ${resX2.toFixed(2)}
+x2 = ${formatNumber(resX2)}
 `
     );
   });
@@ -80,5 +80,13 @@ x2 = ${resX2.toFixed(2)}
     }
 
     type();
+  }
+
+  function formatNumber(number) {
+    if (Number.isInteger(number)) {
+      return number.toFixed(0);
+    } else {
+      return number.toFixed(2);
+    }
   }
 });
