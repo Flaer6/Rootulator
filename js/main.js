@@ -24,12 +24,31 @@ document.addEventListener("DOMContentLoaded", () => {
       result,
       `
 D = b² - 4 * a * c
+
+D = ${b}² - 4 * (${a}) * (${c})
+
+D = ${b ** 2} - ${4 * a * c}
+
 D = ${resDiscriminant.toFixed(2)}
-</br>
-x1 = (-b + √D) / (2 * a)
+
+==========================
+
+x1 = -b + √D / 2 * a
+
+x1 = ${-b.toFixed(2)} + √${resDiscriminant.toFixed(2)} / 2 * (${a})
+
+x1 = ${-b.toFixed(2) + Math.sqrt(resDiscriminant).toFixed(2)} / (${2 * a})
+
 x1 = ${resX1.toFixed(2)}
-</br>
-x2 = (-b - √D) / (2 * a)
+
+==========================
+
+x2 = -b - √D / 2 * a
+
+x2 = ${-b.toFixed(2)} - √${resDiscriminant} / 2 * (${a})
+
+x2 = ${-b.toFixed(2) - Math.sqrt(resDiscriminant)} / (${2 * a})
+
 x2 = ${resX2.toFixed(2)}
 `
     );
@@ -37,12 +56,12 @@ x2 = ${resX2.toFixed(2)}
 
   reset.addEventListener("click", () => {
     // Очистка полей ввода
-    inputA.value = '';
-    inputB.value = '';
-    inputC.value = '';
+    inputA.value = "";
+    inputB.value = "";
+    inputC.value = "";
 
     // Очистка результата
-    result.innerHTML = '';
+    result.innerHTML = "";
   });
 
   function typeText(element, text) {
